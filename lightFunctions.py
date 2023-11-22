@@ -31,7 +31,7 @@ def readIntensity(photoName, plotName, lamp, surface):
 
     return luma
 
-
-readIntensity("./rtyt.jpg","test","rtyt","bel")
+if __name__=="__main__":
+    readIntensity("./rtyt.jpg","test","rtyt","bel")
 
 
