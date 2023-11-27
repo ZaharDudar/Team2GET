@@ -16,19 +16,23 @@ r = [i[0] for i in rgb]
 b = [i[2] for i in rgb]
 r_max, b_max = max(r), max(b)
 i_r, i_b = r.index(r_max), b.index(b_max)
-k = 610 / i_r
+k = (610-404) / i_r
 
-x = np.linspace(0, 600, 600)
-x = [i * k for i in x]
+x = np.linspace(0, 264, 264)
+x = [(i * k + 404) for i in x]
+
+# Clear
 plt.cla()
 plt.clf()
+
+# Отраженная интенсивность I
 
 ax = plt.axes()
 ax.set_facecolor(color='#E5E4E2')
 ax.grid(which='major', linewidth=1)
 ax.grid(which='minor', linewidth=0.7, linestyle='--')
 ax.minorticks_on()
-ax.set_xlim(xmin=350, xmax=1300)
+ax.set_xlim(xmin=405, xmax=653)
 
 plt.plot(x, I1, color='blue', label='blue')
 plt.plot(x, I2, color='green', label='green')
@@ -48,6 +52,8 @@ A3 = [I3[i] / I4[i] for i in range(len(I1))]
 A4 = [I4[i] / I4[i] for i in range(len(I1))]
 A5 = [I5[i] / I4[i] for i in range(len(I1))]
 
+# Зависимость альбедо А
+
 plt.cla()
 plt.clf()
 
@@ -56,7 +62,7 @@ ax.set_facecolor(color='#E5E4E2')
 ax.grid(which='major', linewidth=1)
 ax.grid(which='minor', linewidth=0.7, linestyle='--')
 ax.minorticks_on()
-ax.set_xlim(xmin=400, xmax=1100)
+ax.set_xlim(xmin=405, xmax=653)
 
 plt.plot(x, A1, color='blue', label='blue')
 plt.plot(x, A2, color='green', label='green')
