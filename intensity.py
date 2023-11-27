@@ -16,10 +16,10 @@ r = [i[0] for i in rgb]
 b = [i[2] for i in rgb]
 r_max, b_max = max(r), max(b)
 i_r, i_b = r.index(r_max), b.index(b_max)
-k = (610-404) / i_r
+k = (610-435) / i_r
 
 x = np.linspace(0, 264, 264)
-x = [(i * k + 404) for i in x]
+x = [(i * k + 435) for i in x]
 
 # Clear
 plt.cla()
@@ -32,7 +32,7 @@ ax.set_facecolor(color='#E5E4E2')
 ax.grid(which='major', linewidth=1)
 ax.grid(which='minor', linewidth=0.7, linestyle='--')
 ax.minorticks_on()
-ax.set_xlim(xmin=405, xmax=653)
+ax.set_xlim(xmin=435, xmax=650)
 
 plt.plot(x, I1, color='blue', label='blue')
 plt.plot(x, I2, color='green', label='green')
@@ -62,7 +62,7 @@ ax.set_facecolor(color='#E5E4E2')
 ax.grid(which='major', linewidth=1)
 ax.grid(which='minor', linewidth=0.7, linestyle='--')
 ax.minorticks_on()
-ax.set_xlim(xmin=405, xmax=653)
+ax.set_xlim(xmin=435, xmax=650)
 
 plt.plot(x, A1, color='blue', label='blue')
 plt.plot(x, A2, color='green', label='green')
