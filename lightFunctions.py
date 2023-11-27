@@ -6,9 +6,9 @@ from cycler import cycler
 
 def read_image(photoname, graph_name, lamp, surface):
     photo = imageio.imread(photoname)
-    background = photo[400:750, 700:1300, 0:3]
+    background = photo[520:720, 760:1024, 0:3]
 
-    cut = photo[400:750, 700:1300, 0:3]
+    cut = photo[520:720, 760:1024, 0:3]
     rgb = np.mean(cut, axis=(0))
     luma = 0.2989 * rgb[:, 0] + 0.5866 * rgb[:, 1] + 0.1144 * rgb[:, 2]
 
